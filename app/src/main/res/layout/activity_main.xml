@@ -6,27 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="21dp"
-        android:layout_height="21dp"
-        app:srcCompat="@drawable/nav_menu"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="20dp" />
-
     <TextView
         android:id="@+id/number_to_call"
         android:layout_width="234dp"
         android:layout_height="20dp"
-        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteX="94dp"
         tools:layout_editor_absoluteY="20dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/search"
-        tools:layout_editor_absoluteX="334dp"
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="57dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:srcCompat="@drawable/group_1"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="28dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/number_to_call"
+        app:srcCompat="@drawable/nav_menu"
         tools:layout_editor_absoluteY="20dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="55dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="44dp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:srcCompat="@drawable/settings"
+        tools:layout_editor_absoluteY="677dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/shift"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:srcCompat="@drawable/user"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="29dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/number_to_call"
+        app:srcCompat="@drawable/search"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="41dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/slider"
+        tools:layout_editor_absoluteX="323dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/HeaderText"
+        android:layout_width="133dp"
+        android:layout_height="33dp"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="91dp"
+        android:text="Coffee To Study"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500" />
+
+    <TextView
+        android:id="@+id/HeaderText"
+        android:layout_width="133dp"
+        android:layout_height="33dp"
+        android:fontFamily="casual"
+        android:text="chose one "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="133dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
