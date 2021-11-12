@@ -12,6 +12,15 @@
         android:layout_height="20dp"
         tools:layout_editor_absoluteX="94dp"
         tools:layout_editor_absoluteY="20dp" />
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="28dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/number_to_call"
+        app:srcCompat="@drawable/nav_menu"
+        tools:layout_editor_absoluteY="20dp" />
+
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -22,14 +31,6 @@
         app:srcCompat="@drawable/group_1"
         tools:layout_editor_absoluteY="675dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="28dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toStartOf="@+id/number_to_call"
-        app:srcCompat="@drawable/nav_menu"
-        tools:layout_editor_absoluteY="20dp" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -56,6 +57,20 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:srcCompat="@drawable/user"
         tools:layout_editor_absoluteY="675dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="662dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="52dp" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -95,5 +110,7 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="54dp"
         tools:layout_editor_absoluteY="133dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
