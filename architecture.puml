@@ -1,0 +1,212 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+namespace contract{
+    abstract class Model{
+     +toJson(): Map<String, dynamic>
+       +fromJson(): User
+    }
+    abstract class RecyclerViewAdapter{
+     *  mInflater : LayoutInflater
+
+            + onCreateViewHolder(ViewGroup parent, int viewType) : ViewHodler
+            + onBindViewHolder(WordViewHolder holder, int position): void
+            + public  getItemCount(): int
+    }
+    abstract class ViewHolder{}
+    abstract class AppCompactActivity{
+        + onCreate(Bundle savedInstanceState) : void
+                + onCreateOptionsMenu(Menu menu): boolean
+        }
+
+    abstract class Service<Model>                                {
+        + find() : List<Model>
+        + findOne(String id) : Model
+        + create(Map<String,dynamic> data) : Model
+        + update(Model model) : model
+        + delete(String id) : boolean
+
+        }
+     abstract class Controller<Model>{
+    + Service service
+
+     }
+
+     interface authenticable{
+     + login()
+     + logout()
+     + register()
+     }
+}
+newpage
+namespace models{
+class User extends Model implements authenticable{
+
+    *id :Int
+   *token  :string
+   *name: text
+   *email :text
+   *password text
+   *date : text
+   *photo : text
+
+
+
+}
+class CoworkingSpace extends Model{
+    *id : Int  PK
+        *name : string
+        *address: string
+        *video: string
+        *chair_number: Int
+        *table_number: Int
+        *images: Image
+        *review: string
+        *rating: double
+        *phone: Int
+        *description: string
+
+}
+class Product extends Model{
+    *id :Int  PK
+    *name : string
+    *price : double
+    *coworking_space_id: Int FK
+}
+
+class Image extends Model{
+ *id:Int PK
+ *link: string
+ *coworking_space_id: Int FK
+ }
+
+ class Feedback extends Model{
+    *id AI PK
+    *review: string
+    *rating: double
+    *user_id: Int Fk
+    *coworking_space_id: Int FK
+ }
+
+
+}
+newpage
+namespace activities{
+
+    class HomeActivity<coworkingSpaceListAdapter> extends AppCompactActivity{
+        * LinkedList<String,Image> mCoworkingList = new LinkedList<>();
+        *  mRecyclerView : RecyclerView;
+        *  mAdapter : coworkingSpaceListAdapter;
+        * Menu
+        * Search
+        * Filter
+        * SearchEditText: EditText
+
+
+
+    }
+    class CoworkingSpaceToChooseActivity extends AppCompactActivity
+    class CheckPurchaseActivity extends AppCompactActivity
+    class CongratulationsActivity extends AppCompactActivity
+
+
+
+}
+    newpage
+    namespace adapters{
+
+        class CoworkingSpaceViewHolder extends RecyclerViewHolder{
+
+
+        }
+        class ReviewViewHolder extends RecyclerViewHolder
+
+
+
+        class CoworkingSpaceListAdapter <cowrokingSpaceViewHolder> extends RecyclerViewAdapter{
+                mCoworkingSpaceList: List<CoworkingSpace>
+
+        }
+        class ReviewListAdapter <ReviewViewHolder> extends RecyclerViewAdapter{
+            mReviewList: List<Review>
+        }
+
+
+    }
+
+
+newpage
+namespace controller {
+    class UserController<User> extends Controller
+    class CoworkingSpaceController<CoworkingSpaceService> extends Controller
+    class ProductController<Product> extends Controller
+    class ImageController<Image> extends Controller
+    class FeedbackController<Feedback> extends Controller
+}
+newpage
+namespace services{
+ namespace remote{
+ class LocationService
+ class UserService extends Service
+ class CoworkingSpaceService extends Service
+ class ProductService extends Service
+ class FeedbackService extends Service
+ class ImageService extends Service
+ }
+ namespace local{
+ class UserLocalService
+ class CoworkingSpaceLocalService
+ }
+}
+
+newpage
+namespace res{
+    namespace drawable{
+    class star
+    class home
+    class phone
+    class profile
+    class filter
+    class menu
+    class search
+    }
+    namespace layout.xml{
+        class activity_home
+        class activity_CoworkingSpaceToChoose
+        class activity_CheckPurchase
+        class activity_Congratulations
+        }
+        namespace compounent{
+        class buttom_bar{
+        + home_item
+        + setting_item
+        + profile_item
+        + call_item
+        }
+        class review_item{
+        +name: String
+        +photo: string
+        + feedback: string
+        + date: Date
+        }
+        class coworking_space_to_choose{
+        + image: String
+        + name : String
+        }
+        class button{
+            + button_field: string
+        }
+
+    }
+    namespace values{
+    class colors
+    class dimens
+    class styles
+    class strings
+    }
+}
+
+
+
+@enduml
