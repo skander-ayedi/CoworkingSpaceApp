@@ -25,7 +25,20 @@ public class MainActivity5 extends AppCompatActivity {
             getPackageManager().getPackageInfo("com.facebook.katana", 0);
             return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/skon.ayedi/"));
         } catch (Exception e) {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/appetizerandroid"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/skon.ayedi/"));
+        }
+    }
+
+    public void instacl(View view) {
+        startActivity(getOpenInstagramIntent());
+    }
+
+    public Intent getOpenInstagramIntent() {
+        try {
+            getPackageManager().getPackageInfo("com.instagram.katana", 0);
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/yossriabdedayem/"));
+        } catch (Exception e) {
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/yossriabdedayem/"));
         }
     }
 }
