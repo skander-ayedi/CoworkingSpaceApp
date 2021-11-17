@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity4">
+    tools:context=".MainActivity4"
+    style="@style/rose"
+    >
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -34,6 +36,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2"
+        android:onClick="launchSecondActivity1"
         app:srcCompat="@drawable/shift" />
 
     <ImageButton
