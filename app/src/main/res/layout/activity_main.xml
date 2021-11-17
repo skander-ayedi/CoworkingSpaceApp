@@ -39,7 +39,8 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:layout_constraintTop_toBottomOf="@+id/view2"
-        app:srcCompat="@drawable/group_1" />
+        android:onClick="launchSecondActivity5"
+        app:srcCompat="@drawable/info" />
 
     <ImageButton
         android:id="@+id/imageButton3"

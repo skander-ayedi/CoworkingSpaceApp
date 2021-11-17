@@ -23,4 +23,9 @@ public class MainActivity4 extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void launchSecondActivity5(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent5 = new Intent(this, MainActivity5.class);
+        startActivity(intent5);
+    }
 }

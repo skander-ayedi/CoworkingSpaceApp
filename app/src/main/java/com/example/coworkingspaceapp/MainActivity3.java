@@ -30,4 +30,10 @@ public class MainActivity3 extends AppCompatActivity {
         Intent intent2 = new Intent(this, MainActivity2.class);
         startActivity(intent2);
     }
+
+    public void launchSecondActivity5(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent5 = new Intent(this, MainActivity5.class);
+        startActivity(intent5);
+    }
 }
