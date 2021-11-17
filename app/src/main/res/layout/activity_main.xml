@@ -67,6 +67,7 @@
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toBottomOf="@+id/view2"
+        android:onClick="launchSecondActivity"
         app:srcCompat="@drawable/user" />
 
     <View
