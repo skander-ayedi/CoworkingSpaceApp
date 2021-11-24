@@ -1,5 +1,8 @@
 package com.example.coworkingspaceapp.services;
 
+import com.example.coworkingspaceapp.models.CoworkingSpace;
+import com.google.gson.Gson;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -7,11 +10,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Iterator;
-import java.util.Map;
 
 public class Request {
 
@@ -51,7 +49,7 @@ public class Request {
 
     }
 
-    public static void getRequest(String path) throws Exception
+    public static String getRequest(String path) throws Exception
     {
         //instantiates httpclient to make request
         DefaultHttpClient httpclient = new DefaultHttpClient();
@@ -75,12 +73,18 @@ public class Request {
 
         HttpResponse response = httpclient.execute(httpget);
         String responseString = new BasicResponseHandler().handleResponse(response);
+        Gson gson = new Gson();
+
+
 
         System.out.println("*****************************************************************yes");
         System.out.print(responseString);
 
 
         System.out.println(response);
+
+        return responseString;
+
 
     }
 

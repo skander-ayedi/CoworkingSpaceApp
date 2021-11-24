@@ -24,6 +24,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 
 
 // CoworkingSpace.java
@@ -31,52 +32,148 @@ import java.time.OffsetDateTime;
 
 
 public class CoworkingSpace {
-    private long id;
-    private String url;
-    private CoworkingSpaceClass coworkingSpace;
-    private OffsetDateTime publishedAt;
-    private OffsetDateTime createdAt;
-    private OffsetDateTime updatedAt;
+    private float id;
+    private String name;
+    private String address;
+    private String video = null;
+    private float chair_number;
+    private float table_number;
+    private float rating;
+    private float phone;
+    private String description;
+    private String published_at;
+    private String created_at;
+    private String updated_at;
+    ArrayList < Product > products = new ArrayList< Product >();
 
-    @JsonProperty("id")
-    public long getID() { return id; }
-    @JsonProperty("id")
-    public void setID(long value) { this.id = value; }
-
-    @JsonProperty("url")
-    public String getURL() { return url; }
-    @JsonProperty("url")
-    public void setURL(String value) { this.url = value; }
-
-    @JsonProperty("coworking_space")
-    public CoworkingSpaceClass getCoworkingSpace() { return coworkingSpace; }
-    @JsonProperty("coworking_space")
-    public void setCoworkingSpace(CoworkingSpaceClass value) { this.coworkingSpace = value; }
-
-    @JsonProperty("published_at")
-    public OffsetDateTime getPublishedAt() { return publishedAt; }
-    @JsonProperty("published_at")
-    public void setPublishedAt(OffsetDateTime value) { this.publishedAt = value; }
-
-    @JsonProperty("created_at")
-    public OffsetDateTime getCreatedAt() { return createdAt; }
-    @JsonProperty("created_at")
-    public void setCreatedAt(OffsetDateTime value) { this.createdAt = value; }
-
-    @JsonProperty("updated_at")
-    public OffsetDateTime getUpdatedAt() { return updatedAt; }
-    @JsonProperty("updated_at")
-    public void setUpdatedAt(OffsetDateTime value) { this.updatedAt = value; }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static CoworkingSpace[] CoworkingSpacefromJson(String json) throws IOException {
-        return Converter.getObjectReader().readValue(json);
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static String toJsonString(CoworkingSpace[] obj) throws JsonProcessingException {
-        return Converter.getObjectWriter().writeValueAsString(obj);
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
     }
+
+    public ArrayList<Feedback> getFeedbacks() {
+        return feedbacks;
+    }
+
+    public void setFeedbacks(ArrayList<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
+    }
+
+    public ArrayList<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(ArrayList<Image> images) {
+        this.images = images;
+    }
+
+    ArrayList < Feedback > feedbacks = new ArrayList < Feedback > ();
+    ArrayList < Image > images = new ArrayList < Image > ();
+
+
+    // Getter Methods
+
+    public float getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public float getChair_number() {
+        return chair_number;
+    }
+
+    public float getTable_number() {
+        return table_number;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public float getPhone() {
+        return phone;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getPublished_at() {
+        return published_at;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    // Setter Methods
+
+    public void setId(float id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
+    public void setChair_number(float chair_number) {
+        this.chair_number = chair_number;
+    }
+
+    public void setTable_number(float table_number) {
+        this.table_number = table_number;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public void setPhone(float phone) {
+        this.phone = phone;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPublished_at(String published_at) {
+        this.published_at = published_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
+
 
 }
 

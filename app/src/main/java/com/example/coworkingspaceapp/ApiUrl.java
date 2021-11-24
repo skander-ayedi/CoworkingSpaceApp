@@ -1,7 +1,7 @@
 package com.example.coworkingspaceapp;
 
 public class ApiUrl {
-   static String mainUrl = "http://192.168.1.11:8080/";
+   static String mainUrl = "http://192.168.43.253:8080/";
    static String registerUrl = mainUrl+"auth/local/register/";
     static String loginUrl = mainUrl + "auth/local/";
     static String coworkingSpaceUrl = mainUrl + "coworking-spaces/";
